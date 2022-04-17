@@ -1,45 +1,54 @@
 package assignment_4;
 import java.util.*;
-public class Question1 {
+class Question1 {
 	
-	static int salary(int sal,float r) 
-	{
-		int new_sal=0,increment=0;
-		if (r>=1 && r<=4)
-		{
-			increment=10;
-		}
-		
-		else if (r>=4.1 && r<=7)
-		{
-			increment=25;
-		}
-		
-		else
-		{
-			increment=30;
-		}
-		new_sal=sal+(sal*(increment/100));
-		return new_sal;
-	}
+	 static void salary() {
 
+        
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		System.out.println("enter the Salary: ");
-		Scanner sc=new Scanner(System.in);
-		int sal=sc.nextInt();
-		System.out.println("enter the apprisal rating: ");
-		float r=sc.nextFloat();
-		if(sal<=0 || r<1.0 ||r>10)
-		{
-			System.out.println("Invalid Input..");
-			System.exit(0);
-		}
-		else{
-			 System.out.println(salary(sal,r));
-		}
-	}
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Enter the salary");
+
+        int salary = sc.nextInt();
+
+        System.out.println("Enter the Performance appraisal rating");
+
+        float rating = sc.nextFloat();
+
+        if(salary<1||rating<1.0||rating>5.0){
+
+            System.out.println("Invalid Input");
+
+            System.exit(0);
+
+        }
+
+        else if(rating>=1&&rating<=3){
+
+            salary=salary+(int)(0.1*salary);
+
+            System.out.println(salary);
+
+        }
+
+        else if(rating>3&&rating<=4){
+
+            salary=salary+(int)(0.25*salary);
+
+            System.out.println(salary);
+
+        }
+
+        else {
+
+            salary=salary+(int)(0.3*salary);
+
+            System.out.println(salary);
+
+        }
+
+    } public static void main(String[] args) {
+    salary();}
 
 }
