@@ -42,3 +42,58 @@ public class Assignment4question1 {
 }
 ______________________________________________________________________________________________________________________________________________________________________
 
+package demo;
+
+import java.util.Scanner;
+
+public class Assignment4question2 {
+	
+	static int placed_student(int cs, int ec, int me) {
+		if(cs>ec && cs>me) {
+			System.out.println("Highest placement in cs");
+		}
+		else if(cs<ec && ec>me) {
+			System.out.println("Highest placement in ec");
+		}
+		else if(me>ec && cs<me) {
+			System.out.println("Highest placement in me");
+		}
+		else if(cs==ec && ec>me) {
+			System.out.println("Highest placement in cs and ec");
+		}
+		else if(cs>ec && cs==me) {
+			System.out.println("Highest placement in cs and me");
+		}
+		else if(me==ec && cs<me) {
+			System.out.println("Highest placement in ec and me");
+		}
+		else {
+			System.out.println("None of the department has got the highest placement");
+		}
+		return 0;
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the number of students placed in CS: ");
+		int cs=sc.nextInt();
+		System.out.print("Enter the number of students placed in EC: ");
+		int ec=sc.nextInt();
+		System.out.print("Enter the number of students placed in ME: ");
+		int me=sc.nextInt();
+		if(cs>=0 && ec>=0 && me>=0) {
+			placed_student(cs,ec,me);
+		}
+		else {
+			System.out.println("Invalid Input ");
+		}
+
+	}
+
+}
+
+______________________________________________________________________________________________________________________________________________________________________
+
+
+
