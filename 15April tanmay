@@ -1,0 +1,44 @@
+package demo;
+
+import java.util.Scanner;
+
+public class Assignment4question1 {
+	
+	static int cal_increment(int salary, float rating) {
+		int inc = 0;
+		int inc_salary = 0;
+		if(rating>=1||rating<=4) {
+			inc=10;
+			
+		}
+		else if(rating>=4.1||rating<=7) {
+			inc=25;
+			
+		}
+		else {
+			inc=30;
+			
+		}
+	    inc_salary =salary+(salary*inc/100);
+		return inc_salary ;
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the salary: ");
+		int salary=s.nextInt();
+		System.out.println("Enter the Performance appraisal rating: ");
+		float rating= s.nextFloat();
+		if(rating<1 || rating>10 || salary<0) {
+			System.out.println("Invalid Input");
+		}else {
+			System.out.println(cal_increment(salary,rating));
+		
+		
+
+	}
+	}
+}
+______________________________________________________________________________________________________________________________________________________________________
+
