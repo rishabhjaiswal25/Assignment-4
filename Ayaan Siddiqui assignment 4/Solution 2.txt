@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Main
+{
+	static void maxp(int cs,int ec,int me) {
+		if(cs>me&&cs>ec)
+			System.out.println("Highest placement CS");
+		else if(ec>me&&ec>cs)
+			System.out.println("Highest placement EC");
+		else if(me>cs&&me>ec)
+		System.out.println("Highest placement ME");
+		else if(cs==me&&cs>ec)
+			System.out.println("Highest placement CS ME");
+		else if(ec==me&&ec>cs)
+			System.out.println("Highest placement EC ME");
+		else if(me==cs&&me>ec)
+		System.out.println("Highest placement CS ME");
+		else if(ec==cs&&ec>me)
+			System.out.println("Highest placement CS EC");
+		else if(me==cs&&me==ec)
+			System.out.println("Highest placement CS EC ME");
+		else if(me==cs&&me==ec&&ec==0)
+			System.out.println("None of the department has got the highest placement");
+		else if(me<0&&cs<0&&ec<0)
+			System.out.println("Input is Invalid");
+		
+	}
+
+	public static void main(String[] args) {
+		int cs,ec,me;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the no of students placed in CS: ");
+        cs = sc.nextInt();
+        System.out.print("Enter the no of students placed in EC: ");
+        ec = sc.nextInt();
+        System.out.print("Enter the no of students placed in ME: ");
+        me = sc.nextInt();
+        
+        maxp(cs,me,ec);
+        
+        sc.close();
+
+
+	}
+
+}
