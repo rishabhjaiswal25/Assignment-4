@@ -1,0 +1,122 @@
+# Assignment-4
+code-1:
+
+
+import java.util.Scanner;
+public class Assign4_1 {
+	static int cal_increment(int sal,float rating) {
+		int inc=0;
+		if(rating >=1 && rating <= 4) {
+			inc=10;
+		}
+		else if(rating >= 4.1 && rating <=7) {
+			inc=25;
+		}
+		else {
+			inc=30;
+		}
+		int inc_sal=sal+(sal*inc/100);
+		return inc_sal;
+	}
+	public static void main(String args[]) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the salary: ");
+    System.out.println("Enter the Performance appraisal rating: ");
+		float rating= s.nextFloat();
+		if(rating<1 || rating>10 || sal<0) {
+			System.out.println("Invalid Input");
+		}else {
+			System.out.println(cal_increment(sal,rating));
+		}
+		
+	}
+}
+
+
+CODE:- 2
+
+import java.util.Scanner;
+public class Assign4_2 {
+	static void cal_high_place(int cs,int ec,int me) {
+		if(cs<0 || ec<0 || me<0) {
+			System.out.println("Input is invalid");
+		}
+		else if(cs==ec && ec==me) {
+			System.out.println("None of the department has got the highest placement");
+		}
+		else {
+			System.out.println("Highest placement0");
+			int maxx=0;
+			if(cs>ec && cs>me) {maxx=cs;}
+			else if(ec>cs && ec>me) {maxx=ec;}
+			else {maxx=me;}
+			if(maxx==cs) {System.out.println("CS");}
+			if(maxx==ec) {System.out.println("EC");}
+			if(maxx==me) {System.out.println("ME");}
+		}	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the no of students in CS:");
+		int cs=s.nextInt();
+		System.out.println("Enter the no od students in EC:");
+		int ec=s.nextInt();
+		System.out.println("Enter the no of students in ME:");
+		int me=s.nextInt();
+		cal_high_place(cs,ec,me);
+	}
+
+}
+CODE : 3
+
+mport java.util.*;
+public class Assign4_3 {
+	static void prime(int low,int high) {
+		if(low>=high) {
+			System.out.println("Provide valid input");
+		}
+		else {
+			if(low==1) {low++;}
+			for(int i=low;i<=high;i++) {
+				int count=0;
+				for(int j=2;j<=i/2;j++) {
+					if(i%j==0) {count++;}
+				}
+				if(count==0) {System.out.print(i+" ");}
+			}
+		}
+	}
+	public static void main(String args[]) {
+		Scanner s=new Scanner(System.in);
+		int low=s.nextInt();
+		int high=s.nextInt();
+		prime(low,high);
+	}
+}
+
+code:-4
+
+import java.util.Scanner;
+import java.lang.Math;
+public class Assign4_4 {
+	static void sum(int low,int high) {
+		int even=0,odd=0,abs=0;
+		for(int i=low;i<=high;i++) {
+			if(i%2==0) {even=even+i;}
+			else {odd=odd+i;}
+		}
+		abs=Math.abs(even-odd);
+		System.out.println("The Sum of odd numbers from "+low+" to "+high+" is:"+odd);
+		System.out.println("The Sum of even numbers from "+low+" to "+high+" is:"+even);
+		System.out.println("The absolute difference between the two sums is: "+abs);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner(System.in);
+		int low=s.nextInt();
+		int high=s.nextInt();
+		sum(low,high);
+	}
+
+}
