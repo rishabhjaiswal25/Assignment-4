@@ -1,0 +1,24 @@
+package assignment_1;
+import java.util.Scanner;
+public class ODD_EVEN {
+
+			static void sum(int low,int high) {
+				int even=0,odd=0,abs=0;
+				for(int i=low;i<=high;i++) {
+					if(i%2==0) {even=even+i;}
+					else {odd=odd+i;}
+				}
+				abs=Math.abs(even-odd);
+				System.out.println("The Sum of odd numbers from "+low+" to "+high+" is:"+odd);
+				System.out.println("The Sum of even numbers from "+low+" to "+high+" is:"+even);
+				System.out.println("The absolute difference between the two sums is: "+abs);
+			}
+			public static void main(String[] args) {
+				// TODO Auto-generated method stub
+				Scanner OB = new Scanner(System.in);
+				int low=OB.nextInt();
+				int high=OB.nextInt();
+				sum(low,high);
+			}
+
+		}
